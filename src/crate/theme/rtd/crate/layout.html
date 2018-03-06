@@ -2,12 +2,9 @@
 
   {% set css_files = [
     '_static/css/normalize.css',
-    '_static/css/bootstrap.css',
-    '_static/css/mmenu.all.css',
-    '_static/css/components.css',
-    '_static/css/crateio.css',
-    '_static/css/crateio-rtd.css',
-    '_static/css/custom.css',
+    '../../../crate-website/css/bootstrap.min.css',
+    '../../../crate-website/css/styles.css',
+    '_static/css/crateio-rtd.css'
     ]
   %}
 
@@ -20,7 +17,10 @@
     '_static/js/bootstrap.js',
     '_static/js/mmenu.all.min.js',
     '_static/js/fontawesome.js',
-    '_static/js/custom.js'
+    '_static/js/custom.js',
+    '_static/js/crate.js',
+    '_static/js/jquery.sticky-sidebar.min.js',
+    '../../../crate-website/js/script.js',
     ]
   %}
 
@@ -44,12 +44,7 @@
   {%- block content %}
   {% include "navbar.html" %}
 
-  <div class="w-section section border-top">
-    <div class="w-container w-hidden-main margin-bottom-32">
-      <div class="section" style="margin: 0px">
-        <a href="#" id="mobile-menu-toggler" class="w-button">Toggle Doc Menu</a>
-      </div>
-    </div>
+  <div class="main" id="Top">
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-lg-3">
@@ -96,6 +91,7 @@
   var $navAffix = $('#nav-affix');
   var $contentEl = $('.wrapper-content-right');
   // Desktop only
+  /*
   if( !$('#mobile-menu-toggler').is(':visible') ) {
 
     // Only if the content is taller than the sidebar,
@@ -125,7 +121,7 @@
       $('.wrapper-navleft').toggle();
     });
 
-  }
+  }*/
 
   $(document).ready(function() {
     window.setTimeout(function() {$('body').append('<a href="https://crate.io/docs/support/slackin/" style="z-index: 10; position: fixed; bottom: 20px; right: ' + ($('#intercom-launcher').is(':visible') ? '90' : '20') + 'px; box-shadow: 0 6px 13px 0 rgba(0, 0, 0, .23)"><img src="{{ pathto('_static', 1) }}/images/slack.png" id="slack-container" /></a>'); }, 2000);
