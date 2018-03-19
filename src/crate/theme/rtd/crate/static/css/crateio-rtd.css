@@ -8,35 +8,47 @@ img{
 
 .cr-section-top {
     background-color: #ffffff;
-    position: fixed;
+    /*position: fixed;
     width: 100%;
 		top:0;
-		z-index: 100;
+		z-index: 100;*/
 }
 
-.main{
-	margin-top: 60px;
+
+.margin-top-0{
+  margin-top: 0;
 }
+
 
 h1{
 	font-family: 'BlenderProBold', Arial, sans-serif;
-	font-size:3rem;
+	font-size: 3.5rem;
+  line-height: 1;
+  margin-top: 1rem;
 }
 
 h2{
 	font-size: 2rem;
 }
 
+.cr-section-top{
+
+}
+
 .section{
-	margin-bottom: 3rem;
+	margin-bottom: 4rem;
 }
 
 .wrapper-content-right .section {
-	margin-top: 32px;
+	margin-top: 2rem;
 }
 
 .wrapper-content-right > .section {
-	margin-top: 0px;
+	margin-top: 4rem;
+}
+
+.wrapper-content-right .section:first-child {
+	margin-top: 0;
 }
 
 .toctree {
@@ -145,30 +157,53 @@ blockquote {
 /** MENUE **/
 
 .bs-docs-sidenav .toctree li {
-	padding: 3px 0px;
-	line-height: 16px;
+    line-height: 1.2;
+    padding: .4rem 0;
+    font-size: 1rem;
+    display: inline-block;
+    width:100%
+}
+
+.bs-docs-sidenav ul.toctree {
+    padding-left: 0;
+}
+
+.bs-docs-sidenav ul {
+    padding-left: 1rem;
+    display: block;
+}
+
+.bs-docs-sidenav .toctree li.cr-nav-label {
+    color: #bbb;
+    margin-top: 1rem;
 }
 
 .bs-docs-sidenav .toctree li.border-top {
 	border-top: 1px solid #e7e7e7;
-	padding-top: 16px;
-	margin-top: 16px;
+	padding-top: 1rem;
+	margin-top: 1rem;
 }
 
 .bs-docs-sidenav .toctree li a {
+  display: inline-block;
 	text-decoration: none;
-	font-size: 14px;
-	line-height: 16px;
 	color: black;
+}
+
+.bs-docs-sidenav .toctree li a:hover {
+	color: #008AAE;
+}
+
+.bs-docs-sidenav .toctree li a.current-active {
+    padding-bottom: .4rem;
 }
 
 .bs-docs-sidenav .toctree li.current > a,
 .bs-docs-sidenav .toctree li.active > a {
 	font-weight: bold;
+  letter-spacing: 0;
 }
-.bs-docs-sidenav ul {
-	margin-bottom: 0px;
-}
+
 .bs-docs-sidenav .toctree ul ul ul {
 	display: none;
 }
@@ -181,7 +216,7 @@ blockquote {
 	padding-left: 0px;
 }
 .bs-docs-sidebar {
-	padding: 8px 16px;
+	/*padding: 1rem*/;
 }
 
 .affix {
@@ -191,20 +226,87 @@ blockquote {
 
 #nav-affix {
 	overflow-y: auto;
-	width: 240px;
+}
+
+#nav-main .cr-navbar-toggle{
+  display:none;
+}
+
+#nav-main .cr-navbar-toggle-docs{
+  border: none;
+  color: #000;
+  padding: 0;
+  outline: none;
+  background-color: #ffffff;
+  margin-right: 20px;
+  border-radius: 0;
+
+}
+
+.cr-sidenav-up{
+  position: fixed;
+  top:60px;
+  left:0;
+  width:100%;
+  background-color: #fff;
+  z-index: 100;
+  padding: 0 1rem;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+#nav-side .cr-navbar-toggle, #nav-side .cr-navbar-toggleLabel {
+  float:left;
+  margin-right: 1rem;
 }
 
 .wrapper-navleft {
 	padding: 0px;
 	border: 0px;
 }
+
+#nav-main{
+  justify-content: space-between;
+}
+
+#nav-main .navbar-collapse{
+  flex-grow: 0;
+}
+
+@media (min-width: 768px){
+  .navbar-nav .nav-item.nav-highlight a {
+    border: 1px solid #000;
+    border-radius: 2px;
+    padding: .2rem 1rem;
+    margin-top: 0.75rem;
+    margin-left: 1rem;
+  }
+  .cr-section-top .nav-item {
+    border-top: none;
+  }
+}
+
 .wrapper-navleft .bs-docs-sidebar {
-	border: 1px solid #e7e7e7;
+
 }
-.wrapper-content-right li {
-	font-size: 16px;
-	line-height: 1.5em;
+.cr-content-right .cr-anchor-top {
+
 }
+
+@media (min-width: 768px) {
+  .cr-nav-left{
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .cr-content-right{
+    padding-left: 2rem;
+  }
+
+  #nav-side{
+
+  }
+}
+
 
 h1 code,
 h2 code,
@@ -222,4 +324,49 @@ a code {
 
 div.topic {
     border: 0;
+}
+
+/**
+* Search
+*/
+.form-search {
+  border: 2px solid #55d4f5;
+  display: inline-flex;
+  margin-bottom: 2rem;
+}
+
+.form-search .search-query {
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  outline: none;
+}
+
+.form-search .btn {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+#search-results {
+  margin-top: 2rem;
+}
+
+#search-results > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#search-results > ul li.card {
+  margin-bottom: 20px;
+  background: none;
+  padding: 0;
+}
+
+form.form-search button{
+  margin-top: 0;
+  border-radius: 0;
 }

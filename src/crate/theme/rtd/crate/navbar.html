@@ -1,54 +1,52 @@
 <!-- BEGIN: Top -->
-  <div class="cr-section-top border border-light border-left-0 border-right-0 border-top-0">
+  <div id="top" class="cr-section-top cr-nav-down border border-light border-left-0 border-right-0 border-top-0">
     <div class="container">
-      <nav id="nav-main" class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="index.php"><img class="cr-logo" src="{{ pathto('_static', 1) }}/images/crate-logo.svg"></a>
-          <button class="navbar-toggler cr-navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <nav id="nav-main" class="navbar navbar-expand-md navbar-light">
+        <a class="navbar-brand" href="index.php"><img class="cr-logo" src="{{ pathto('_static', 1) }}/images/crate-logo.svg"></a>
+        <button class="navbar-toggler cr-navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="cr-navtoggle cr-navtoggle-top"></div>
+          <div class="cr-navtoggle cr-navtoggle-mid"></div>
+          <div class="cr-navtoggle cr-navtoggle-bottom"></div>
+        </button>
+        <button class="navbar-toggler cr-navbar-toggle-docs" type="button" data-toggle="collapse" data-target="#nav-side-dropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <div class="cr-navtoggle cr-navtoggle-top"></div>
             <div class="cr-navtoggle cr-navtoggle-mid"></div>
             <div class="cr-navtoggle cr-navtoggle-bottom"></div>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Products
-                </a>
-                <ul class="dropdown-menu cr-dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
-                  <li class="nav-item"><a class="dropdown-item" href="#">CrateDB</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">CrateDB Enterprise</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">CrateDB Cloud</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">CrateDB in Comparison</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Use Cases</a>
-              </li>
-              <li class="nav-item active dropdown">
-                <a class="nav-link dropdown-toggle" href="resources.php" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Resources
-                </a>
-                <ul class="dropdown-menu cr-dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
-                  <li class="nav-item active"><a class="dropdown-item" href="#">Documentation</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">Resource Library</a></li>
-                  <li class="nav-item"><a class="dropdown-item" href="#">Blog</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item nav-highlight">
-                <a class="nav-link" href="download.php">Download</a>
-              </li>
-              <!--<li class="nav-item">
-                <a class="nav-link" href="#">
-                  <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <path d="M7.34500963,14.4400193 C3.43233016,14.4400193 0.25,11.257445 0.25,7.34500963 C0.25,3.43208583 3.43208583,0.25 7.34500963,0.25 C11.2579334,0.25 14.4400193,3.43208583 14.4400193,7.34500963 C14.4400193,8.81253079 13.9873516,10.2145547 13.1631725,11.3924418 L17.5985823,15.8545958 C18.0785742,16.3370555 18.0766679,17.1174833 17.5938428,17.5978449 C17.1102091,18.0790174 16.3301582,18.0771111 15.850427,17.5936799 L11.4255333,13.1420642 C10.2401805,13.9795656 8.82599446,14.4400193 7.34500963,14.4400193 Z M7.34500963,2.16389424 C4.48760057,2.16389424 2.16389424,4.48760057 2.16389424,7.34500963 C2.16389424,10.2019669 4.48782318,12.526125 7.34500963,12.526125 C10.2017443,12.526125 12.526125,10.2017443 12.526125,7.34500963 C12.526125,4.48782318 10.2019669,2.16389424 7.34500963,2.16389424 Z" id="icon-search" fill="#000000"></path>
-                  </svg>
-                </a>
-              </li>-->
-            </ul>
-          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu cr-dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                <li class="nav-item"><a class="dropdown-item" href="#">CrateDB</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">CrateDB Enterprise</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">CrateDB Cloud</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">CrateDB in Comparison</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Use Cases</a>
+            </li>
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Resources
+              </a>
+              <ul class="dropdown-menu cr-dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                <li class="nav-item active"><a class="dropdown-item" href="#">Documentation</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">Resource Library</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">Blog</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item nav-highlight">
+              <a class="nav-link" href="#">Download</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>

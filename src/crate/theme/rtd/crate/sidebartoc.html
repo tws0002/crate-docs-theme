@@ -1,5 +1,9 @@
 <ul class="toctree nav nav-list">
-  <li class="navleft-item">CrateDB</li>
+  <li class="navleft-item cr-nav-label">Search</li>
+  <ul>
+    <li class="navleft-item"><a href="{{ pathto('search') }}">Search Documentation</a></li>
+  </ul>
+  <li class="navleft-item cr-nav-label">CrateDB</li>
   <ul>
     {% if project == 'Getting Started' %}
     <li class="current">
@@ -26,7 +30,7 @@
     <li class="navleft-item"><a href="/docs/crate/guide/">Guide</a></li>
     {% endif %}
   </ul>
-  <li class="navleft-item">CrateDB Clients</li>
+  <li class="navleft-item cr-nav-label">CrateDB Clients</li>
   <ul>
     {% if project == 'Crate Admin' %}
     <li class="current">
@@ -77,7 +81,9 @@
     <li class="navleft-item"><a href="/docs/clients/pdo/">PHP PDO</a></li>
     {% endif %}
   </ul>
-
-  <li class="navleft-item border-top"><a href="https://github.com/crate/crate-sample-apps">Sample Applications</a></li>
-  <li class="navleft-item"><a href="/docs/support/">Support</a></li>
+  <li class="navleft-item cr-nav-label">Support</li>
+  <ul>
+    <li class="navleft-item"><a href="https://github.com/crate/crate-sample-apps">Sample Applications</a></li>
+    <li class="navleft-item"><a href="/docs/support/">Support</a></li>
+  </ul>
 </ul>

@@ -2,8 +2,7 @@
 
   {% set css_files = [
     '_static/css/normalize.css',
-    '../../../crate-website/css/bootstrap.min.css',
-    '../../../crate-website/css/styles.css',
+    '_static/css/web-styles.css',
     '_static/css/crateio-rtd.css'
     ]
   %}
@@ -13,14 +12,11 @@
     '_static/js/underscore.min.js',
     '_static/doctools.js',
     '_static/js/searchtools.js',
-    '_static/js/webflow.js',
-    '_static/js/bootstrap.js',
-    '_static/js/mmenu.all.min.js',
     '_static/js/fontawesome.js',
+    '_static/js/bootstrap.js',
     '_static/js/custom.js',
-    '_static/js/crate.js',
-    '_static/js/jquery.sticky-sidebar.min.js',
-    '../../../crate-website/js/script.js',
+    '_static/js/jquery.sticky-kit.min.js'
+
     ]
   %}
 
@@ -44,10 +40,10 @@
   {%- block content %}
   {% include "navbar.html" %}
 
-  <div class="main" id="Top">
+  <div class="main">
     <div class="container">
       <div class="row">
-        <div class="col-md-4 col-lg-3">
+        <div class="col-md-4 col-lg-3 cr-nav-left">
           <aside class="wrapper-navleft">
             {%- block sidebar1 %}
             {%- for sidebartemplate in sidebars %}
@@ -56,7 +52,7 @@
             {% endblock %}
           </aside>
         </div>
-        <div class="col-md-8 col-lg-9">
+        <div class="col-md-8 col-lg-9 cr-content-right">
           <div class="wrapper-content-right">
             {%- if current_version %}
             <div class="version-select-container">
@@ -77,6 +73,11 @@
             {%- endif %}
             {% block body %}{% endblock %}
           </div>
+          <!-- BEGIN: Top -->
+          <div class="section">
+            <a class="cr-top" href="#Top">Go to Top</a>
+          </div>
+          <!-- END: Top -->
         </div>
       </div>
     </div>
@@ -88,10 +89,11 @@
   {%- block custom_footer %}
 
   <script>
+/*
   var $navAffix = $('#nav-affix');
   var $contentEl = $('.wrapper-content-right');
   // Desktop only
-  /*
+
   if( !$('#mobile-menu-toggler').is(':visible') ) {
 
     // Only if the content is taller than the sidebar,
@@ -121,7 +123,11 @@
       $('.wrapper-navleft').toggle();
     });
 
-  }*/
+  }
+*/
+
+  $(".wrapper-navleft").stick_in_parent();
+  $('body').scrollspy();
 
   $(document).ready(function() {
     window.setTimeout(function() {$('body').append('<a href="https://crate.io/docs/support/slackin/" style="z-index: 10; position: fixed; bottom: 20px; right: ' + ($('#intercom-launcher').is(':visible') ? '90' : '20') + 'px; box-shadow: 0 6px 13px 0 rgba(0, 0, 0, .23)"><img src="{{ pathto('_static', 1) }}/images/slack.png" id="slack-container" /></a>'); }, 2000);
@@ -129,7 +135,7 @@
   </script>
 
   <!-- Segment -->
-  <script>
+  <!-- <script>
     !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","setAnonymousId"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
       analytics.load("{{ theme_tracking_segment_id }}");
       analytics.setAnonymousId($.cookie('uid'));
@@ -139,5 +145,5 @@
         version: '{{ current_version }}'
       });
     }}();
-  </script>
+  </script>-->
 {%- endblock %}
