@@ -238,12 +238,13 @@ blockquote {
   padding: 0;
   outline: none;
   background-color: #ffffff;
-  margin-right: 20px;
+  margin-right: 1rem;
   border-radius: 0;
 
 }
 
 .cr-sidenav-up{
+  display:block;
   position: fixed;
   top:60px;
   left:0;
@@ -273,6 +274,20 @@ blockquote {
   flex-grow: 0;
 }
 
+@media (min-width: 992px){
+  .cr-nav-left{
+    border-right: 1px solid #e7e7e7;
+  }
+
+  .cr-content-right{
+    padding-left: 2rem;
+  }
+
+  .wrapper-navleft{
+    transition: top 0.2s ease-in-out;
+  }
+}
+
 @media (min-width: 768px){
   .navbar-nav .nav-item.nav-highlight a {
     border: 1px solid #000;
@@ -284,6 +299,9 @@ blockquote {
   .cr-section-top .nav-item {
     border-top: none;
   }
+  .navbar-nav .nav-item.nav-highlight a:hover, .navbar-nav .nav-item.nav-highlight a:active, .navbar-nav .nav-item.nav-highlight a:focus{
+    border: 1px solid #15B2DB;
+  }
 }
 
 .wrapper-navleft .bs-docs-sidebar {
@@ -293,19 +311,7 @@ blockquote {
 
 }
 
-@media (min-width: 768px) {
-  .cr-nav-left{
-    border-right: 1px solid #e7e7e7;
-  }
 
-  .cr-content-right{
-    padding-left: 2rem;
-  }
-
-  #nav-side{
-
-  }
-}
 
 
 h1 code,
